@@ -1,11 +1,12 @@
 import * as React from 'react';
-import {Button, FlatList, Image, StyleSheet, Text, View} from 'react-native';
+import {FlatList, Image, StyleSheet, Text, View} from 'react-native';
 import MyDatabase from '../Database/MyDatabase';
+import CustomButton from "./CustomButton/CustomButton";
+import NumericInput from 'react-native-numeric-input'
+
 
 type Props = {
     navigation: any;
-    route: any;
-    refreshList: () => void;
 }
 
 interface Wine {
@@ -16,11 +17,12 @@ interface Wine {
     regions: string;
     years: number;
     grapes: string;
-    codes: string;
+    quantities: number;
 }
 
-export default function WineScreen({route, navigation}: Props) {
+export default function WineScreen({navigation}: Props) {
     const [wines, setWines] = React.useState<Wine[]>([]);
+    const [quantityToRemove, setQuantityToRemove] = React.useState(1);
 
     React.useEffect(() => {
         fetchWines();
@@ -31,16 +33,32 @@ export default function WineScreen({route, navigation}: Props) {
             setWines(result);
         });
     }
-    const onAddWine = () => {
+    React.useEffect(() => {
+        const unsubscribe = navigation.addListener('tabPress', (e: any) => {
+            MyDatabase.getAllWines((result: Wine[]) => {
+                console.log(result);
+                setWines(result);
+                console.log(result);
+            });
+        });
+
+        return unsubscribe;
+    }, [navigation]);
+
+    function removeWine(wineId: number, quantityToRemove: number) {
+        MyDatabase.removeWineToDb(wineId, quantityToRemove);
         fetchWines();
     }
 
+    // @ts-ignore
+    // @ts-ignore
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Liste de vos vins</Text>
-            <Button title="Ajouter un vin" onPress={() => {
-                navigation.navigate('Ajouter', {screen: 'Ajouter un vin', params: {onAddWine}});
-            }}/>
+            <CustomButton onPress={() => {
+                navigation.navigate('Ajouter', {screen: 'Ajouter un vin'});
+            }} text={'Ajouter un vin'}/>
+            <CustomButton onPress={MyDatabase.dropTable} text={'drop la db'}/>
             <FlatList
                 data={wines}
                 style={styles.flatList}
@@ -56,8 +74,20 @@ export default function WineScreen({route, navigation}: Props) {
                                 <Text style={styles.text}> Région : {item.regions}</Text>
                                 <Text style={styles.text}> Année : {item.years}</Text>
                                 <Text style={styles.text}> Cépage : {item.grapes}</Text>
-                                <Text style={styles.text}> Code : {item.codes}</Text>
+                                <Text style={styles.text}> Quantité : {item.quantities}</Text>
                             </View>
+                            <View style={styles.columnQuantity}>
+                                <NumericInput onChange={value => setQuantityToRemove(value)} minValue={1} rounded
+                                              totalHeight={40} totalWidth={80}
+                                              maxValue={item.quantities}
+                                              initValue={1}
+                                              rightButtonBackgroundColor='#c2a5a5'
+                                              leftButtonBackgroundColor='#c2a5a5'></NumericInput>
+                                <CustomButton
+                                    onPress={item.quantities > 0 ? () => removeWine(item.id, quantityToRemove) : () => console.log("quantité trop faible")}
+                                    text={"Enlever"}/>
+                            </View>
+
                         </View>
                     </View>
                 )}
@@ -73,6 +103,29 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'flex-start',
+    },
+    input: {
+        paddingHorizontal: 5,
+        textAlign: "center",
+        paddingVertical: 1,
+        backgroundColor: "#ef6d6d",
+        fontFamily: 'Rajdhani_700Bold',
+        borderRadius: 4,
+        borderWidth: 1,
+        borderColor: "#CBCBCB",
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 1,
+        },
+        shadowOpacity: 0.22,
+        shadowRadius: 2.22,
+        elevation: 2,
+        margin: 10,
+    },
+    textButton: {
+        color: 'white',
+        fontFamily: "Rajdhani_400Regular",
     },
     title: {
         fontFamily: "Rajdhani_700Bold",
@@ -102,14 +155,24 @@ const styles = StyleSheet.create({
         display: "flex",
         flexDirection: "row",
         alignItems: "center",
+        justifyContent: "space-evenly",
         paddingVertical: 10,
         paddingHorizontal: 10,
         borderColor: 'white',
         elevation: 2,
+        gap: 16,
+
     },
     column: {
         display: "flex",
         flexDirection: "column",
+    },
+    columnQuantity: {
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        width: "40%",
+        gap: 16,
     },
     wineImg: {
         width: 100,

@@ -1,11 +1,12 @@
 import * as React from 'react';
 import {Image} from 'expo-image';
-import {Button, ScrollView, StyleSheet, Text, TextInput, View} from 'react-native';
+import {ScrollView, StyleSheet, Text, TextInput, View} from 'react-native';
 import MyDatabase from '../Database/MyDatabase';
 import * as ImagePicker from 'expo-image-picker';
 import {RouteProp} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../App';
+import CustomButton from "./CustomButton/CustomButton";
 
 
 type AddWineFormProps = {
@@ -22,8 +23,9 @@ export default function AddWineFom({navigation, route}: AddWineFormProps) {
     const [year, setYear] = React.useState('');
     const [grape, setGrape] = React.useState('');
     const [code, setCode] = React.useState('');
+    const [quantity, setQuantity] = React.useState('');
+    const [moreInfo, setMoreInfo] = React.useState(false);
     const scannedData = route.params;
-    const onAddWine = route.params;
 
     React.useEffect(() => {
         if (scannedData) {
@@ -33,10 +35,9 @@ export default function AddWineFom({navigation, route}: AddWineFormProps) {
     }, [scannedData]);
 
     const addWine = () => {
-        const wine = {name, image, color, region, year: Number(year), grape, code};
+        const wine = {name, image, color, region, year: Number(year), grape, code, quantity: Number(quantity)};
         console.log(wine);
         MyDatabase.addWineToDb(wine);
-        onAddWine;
     };
     const navigateToScanner = () => {
         navigation.navigate('AddWineScanner');
@@ -69,6 +70,10 @@ export default function AddWineFom({navigation, route}: AddWineFormProps) {
         }
     }
 
+    const showInfo = () => {
+        setMoreInfo(!moreInfo);
+    }
+
     return (
         <ScrollView style={styles.scroll}>
             <View style={styles.container}>
@@ -79,35 +84,56 @@ export default function AddWineFom({navigation, route}: AddWineFormProps) {
                             <Image source={require("../assets/vinrouge.png")} style={styles.wineImg}/>}
                     </View>
                     <View style={styles.buttonContainer}>
-                        <Button title="Sélectionner une image" onPress={pickImage}/>
-                        <Button title="Prendre une photo" onPress={takePicture}/>
+                        <CustomButton onPress={pickImage} text={'Sélectionner une image'}/>
+                        <CustomButton onPress={takePicture} text={'Prendre une photo'}/>
                     </View>
                 </View>
-                <Button title="Scanner le code barre" onPress={navigateToScanner}/>
-                {scannedData ? <Text>{scannedData.toString()}</Text> : <Text>No code</Text>}
+                <View style={styles.scannerButton}>
+                    <CustomButton onPress={navigateToScanner} text={'Scanner le code barre'}/>
+                    <View style={styles.relativeView}>
+                        <Text onPress={showInfo} style={styles.moreInfo}> Pourquoi ? Appuyez ici</Text>
+                        <Text style={moreInfo ? styles.visible : styles.scannerText}>Scanner le code barre vous
+                            permettra de simplement scanner à
+                            nouveau celui-ci quand vous
+                            souhaitez consommer la bouteille.</Text>
+                    </View>
+
+                </View>
                 <View style={styles.rowInput}>
                     <Text style={styles.text}>Nom du vin *</Text>
-                    <TextInput value={name} onChangeText={setName} placeholder="Nom du vin" style={styles.input}/>
+                    <TextInput value={name} returnKeyType={"next"} inputMode={"text"} onChangeText={setName}
+                               placeholder="Nom du vin"
+                               style={styles.input}/>
                 </View>
                 <View style={styles.rowInput}>
                     <Text style={styles.text}>Robe *</Text>
-                    <TextInput value={color} onChangeText={setColor} placeholder="Robe" style={styles.input}/>
+                    <TextInput value={color} onChangeText={setColor} inputMode={"text"} placeholder="Robe"
+                               style={styles.input}/>
                 </View>
                 <View style={styles.rowInput}>
                     <Text style={styles.text}>Région *</Text>
-                    <TextInput value={region} onChangeText={setRegion} placeholder="Région" style={styles.input}/>
+                    <TextInput value={region} onChangeText={setRegion} inputMode={"text"} placeholder="Région"
+                               style={styles.input}/>
                 </View>
                 <View style={styles.rowInput}>
                     <Text style={styles.text}>Année de production *</Text>
-                    <TextInput value={year} onChangeText={setYear} keyboardType={'numeric'} placeholder="Année"
+                    <TextInput value={year} onChangeText={setYear} inputMode={"numeric"} maxLength={4}
+                               keyboardType={'numeric'} placeholder="Année"
                                style={styles.input}/>
                 </View>
                 <View style={styles.rowInput}>
                     <Text style={styles.text}>Cépage</Text>
-                    <TextInput value={grape} onChangeText={setGrape} placeholder="Cépage" style={styles.input}/>
+                    <TextInput value={grape} onChangeText={setGrape} inputMode={"text"} placeholder="Cépage"
+                               style={styles.input}/>
+                </View>
+                <View style={styles.rowInput}>
+                    <Text style={styles.text}>Quantité *</Text>
+                    <TextInput value={quantity} onChangeText={setQuantity} inputMode={"numeric"} placeholder="Quantité"
+                               style={styles.input}
+                               keyboardType={'numeric'}/>
                 </View>
                 <View style={styles.submitContainer}>
-                    <Button title="Ajouter le vin" onPress={addWine}/>
+                    <CustomButton onPress={addWine} text={'Ajouter le vin'}/>
                 </View>
             </View>
         </ScrollView>
@@ -134,6 +160,7 @@ const styles = StyleSheet.create({
     },
     input: {
         paddingHorizontal: 40,
+        textAlign: "center",
         paddingVertical: 1,
         backgroundColor: "#F8F8F8",
         fontFamily: 'Rajdhani_700Bold',
@@ -183,6 +210,35 @@ const styles = StyleSheet.create({
     submitContainer: {
         display: 'flex',
         flexDirection: 'row',
-        gap: 40
+        gap: 40,
+    },
+    scannerButton: {
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "center",
+        width: '100%',
+        alignItems: "center",
+        gap: 16,
+    },
+    scannerText: {
+        width: "50%",
+        position: "absolute",
+        display: "none",
+    },
+    visible: {
+        top: 20,
+        padding: 5,
+        borderRadius: 8,
+        backgroundColor: "#e1e1e1",
+        display: "flex",
+        position: "absolute",
+    },
+    relativeView: {
+        position: "relative",
+    },
+    moreInfo: {
+        fontFamily: 'Rajdhani_700Bold',
+        textDecorationStyle: "solid",
+        textDecorationLine: "underline",
     }
 });
