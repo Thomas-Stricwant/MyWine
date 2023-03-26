@@ -1,8 +1,5 @@
 import * as React from 'react';
 import {Button, StyleSheet, Text, View} from 'react-native';
-import {useFonts} from 'expo-font';
-
-import {Rajdhani_400Regular, Rajdhani_700Bold} from "@expo-google-fonts/rajdhani";
 
 
 type Props = {
@@ -10,14 +7,7 @@ type Props = {
 }
 
 export default function Home({navigation}: Props) {
-    let [fontsLoaded] = useFonts({
-        Rajdhani_700Bold,
-        Rajdhani_400Regular,
-    });
 
-    if (!fontsLoaded) {
-        return null;
-    }
     return (
         <View style={styles.container}>
             <Text style={styles.text}>Home</Text>

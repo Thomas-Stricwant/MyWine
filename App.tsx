@@ -10,6 +10,8 @@ import * as React from 'react';
 import MyDatabase from './Database/MyDatabase';
 import WineScreen from './Components/WineScreen';
 import AddWineForm from './Components/AddWineForm';
+import {useFonts} from "expo-font";
+import {Rajdhani_400Regular, Rajdhani_700Bold} from "@expo-google-fonts/rajdhani";
 
 
 const Tab = createBottomTabNavigator();
@@ -23,7 +25,7 @@ const Stack = createNativeStackNavigator<StackParamList>();
 
 export type RootStackParamList = StackParamList & {
     Home: undefined;
-    WineScreen: { refreshList: () => void; };
+    WineScreen: undefined;
     SuggestFood: undefined;
     Reviews: undefined;
 };
@@ -35,13 +37,13 @@ function WineStack() {
             <Stack.Screen name="AddWineForm" component={AddWineForm} options={{
                 title: "Ajouter un vin",
                 headerTitleAlign: "center",
-                headerTitleStyle: {fontFamily: "RajdhaniBold", fontSize: 30, color: "white"},
+                headerTitleStyle: {fontFamily: "Rajdhani_700Bold", fontSize: 30, color: "white"},
                 headerStyle: {backgroundColor: "#853832"}
             }}/>
             <Stack.Screen name="AddWineScanner" component={AddWineScanner} options={{
                 title: "Scanner le code barre",
                 headerTitleAlign: "center",
-                headerTitleStyle: {fontFamily: "RajdhaniBold", fontSize: 28, color: "white"},
+                headerTitleStyle: {fontSize: 28, color: "white"},
                 headerStyle: {backgroundColor: "#853832"}
             }}/>
         </Stack.Navigator>
@@ -54,7 +56,14 @@ export default function App() {
     React.useEffect(() => {
         MyDatabase.initDatabase();
     }, [])
-
+    const [fontsLoaded] = useFonts({
+        Rajdhani_700Bold,
+        Rajdhani_400Regular,
+    });
+    console.log(fontsLoaded)
+    if (!fontsLoaded) {
+        return null;
+    }
     return (
         <NavigationContainer>
             <Tab.Navigator initialRouteName="Home" screenOptions={({route}) => ({
@@ -80,22 +89,29 @@ export default function App() {
             })}>
                 <Tab.Screen name="Accueil" component={Home} options={{
                     headerTitleAlign: "center",
+                    tabBarLabelStyle: {fontFamily: "Rajdhani_700Bold"},
                     headerTitleStyle: {fontFamily: "Rajdhani_700Bold", fontSize: 30, color: "white"},
                     headerStyle: {backgroundColor: "#853832"}
                 }}/>
                 <Tab.Screen name="Mes vins" component={WineScreen} options={{
                     headerTitleAlign: "center",
+                    tabBarLabelStyle: {fontFamily: "Rajdhani_700Bold"},
                     headerTitleStyle: {fontFamily: "Rajdhani_700Bold", fontSize: 30, color: "white"},
                     headerStyle: {backgroundColor: "#853832"}
                 }}/>
-                <Tab.Screen name="Ajouter" component={WineStack} options={{headerShown: false}}/>
+                <Tab.Screen name="Ajouter" component={WineStack} options={{
+                    headerShown: false,
+                    tabBarLabelStyle: {fontFamily: "Rajdhani_700Bold"},
+                }}/>
                 <Tab.Screen name="Suggestions" component={SuggestFood} options={{
                     headerTitleAlign: "center",
+                    tabBarLabelStyle: {fontFamily: "Rajdhani_700Bold"},
                     headerTitleStyle: {fontFamily: "Rajdhani_700Bold", fontSize: 30, color: "white"},
                     headerStyle: {backgroundColor: "#853832"}
                 }}/>
                 <Tab.Screen name="Mes avis" component={Reviews} options={{
                     headerTitleAlign: "center",
+                    tabBarLabelStyle: {fontFamily: "Rajdhani_700Bold"},
                     headerTitleStyle: {fontFamily: "Rajdhani_700Bold", fontSize: 30, color: "white"},
                     headerStyle: {backgroundColor: "#853832"}
                 }}/>
