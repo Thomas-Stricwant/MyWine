@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/node_modules/@react-native-async-storage/async-storage/android" />
-        <option name="gradleJvm" value="17" />
+        <option name="gradleJvm" value="17 (2)" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/node_modules/@react-native-async-storage/async-storage/android" />
@@ -13,9 +15,10 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/node_modules/@react-native-community/cli-platform-android" />
-        <option name="gradleJvm" value="17" />
+        <option name="gradleJvm" value="17 (2)" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/node_modules/@react-native-community/cli-platform-android" />
@@ -23,6 +26,7 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/node_modules/expo-app-loading/node_modules/expo-splash-screen/android" />
         <option name="gradleJvm" value="17" />
@@ -33,9 +37,10 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/node_modules/expo-application/android" />
-        <option name="gradleJvm" value="17" />
+        <option name="gradleJvm" value="17 (2)" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/node_modules/expo-application/android" />
@@ -43,9 +48,10 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/node_modules/expo-barcode-scanner/android" />
-        <option name="gradleJvm" value="17" />
+        <option name="gradleJvm" value="17 (2)" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/node_modules/expo-barcode-scanner/android" />
@@ -53,9 +59,10 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/node_modules/expo-camera/android" />
-        <option name="gradleJvm" value="17" />
+        <option name="gradleJvm" value="17 (2)" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/node_modules/expo-camera/android" />
@@ -63,9 +70,10 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/node_modules/expo-constants/android" />
-        <option name="gradleJvm" value="17" />
+        <option name="gradleJvm" value="17 (2)" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/node_modules/expo-constants/android" />
@@ -73,9 +81,10 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/node_modules/expo-constants/scripts" />
-        <option name="gradleJvm" value="17" />
+        <option name="gradleJvm" value="17 (2)" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/node_modules/expo-constants/scripts" />
@@ -83,9 +92,10 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/node_modules/expo-file-system/android" />
-        <option name="gradleJvm" value="17" />
+        <option name="gradleJvm" value="17 (2)" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/node_modules/expo-file-system/android" />
@@ -93,9 +103,10 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/node_modules/expo-font/android" />
-        <option name="gradleJvm" value="17" />
+        <option name="gradleJvm" value="17 (2)" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/node_modules/expo-font/android" />
@@ -103,9 +114,10 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/node_modules/expo-image-loader/android" />
-        <option name="gradleJvm" value="17" />
+        <option name="gradleJvm" value="17 (2)" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/node_modules/expo-image-loader/android" />
@@ -113,9 +125,10 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/node_modules/expo-image-picker/android" />
-        <option name="gradleJvm" value="17" />
+        <option name="gradleJvm" value="17 (2)" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/node_modules/expo-image-picker/android" />
@@ -123,9 +136,10 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/node_modules/expo-image/android" />
-        <option name="gradleJvm" value="17" />
+        <option name="gradleJvm" value="17 (2)" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/node_modules/expo-image/android" />
@@ -133,9 +147,10 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/node_modules/expo-keep-awake/android" />
-        <option name="gradleJvm" value="17" />
+        <option name="gradleJvm" value="17 (2)" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/node_modules/expo-keep-awake/android" />
@@ -143,9 +158,10 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/node_modules/expo-modules-autolinking/scripts/android" />
-        <option name="gradleJvm" value="17" />
+        <option name="gradleJvm" value="17 (2)" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/node_modules/expo-modules-autolinking/scripts/android" />
@@ -153,9 +169,10 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/node_modules/expo-modules-core/android" />
-        <option name="gradleJvm" value="17" />
+        <option name="gradleJvm" value="17 (2)" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/node_modules/expo-modules-core/android" />
@@ -163,9 +180,10 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/node_modules/expo-splash-screen/android" />
-        <option name="gradleJvm" value="17" />
+        <option name="gradleJvm" value="17 (2)" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/node_modules/expo-splash-screen/android" />
@@ -173,9 +191,10 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/node_modules/expo-sqlite/android" />
-        <option name="gradleJvm" value="17" />
+        <option name="gradleJvm" value="17 (2)" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/node_modules/expo-sqlite/android" />
@@ -183,9 +202,10 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/node_modules/expo/android" />
-        <option name="gradleJvm" value="17" />
+        <option name="gradleJvm" value="17 (2)" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/node_modules/expo/android" />
@@ -193,9 +213,10 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/node_modules/expo/scripts" />
-        <option name="gradleJvm" value="17" />
+        <option name="gradleJvm" value="17 (2)" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/node_modules/expo/scripts" />
@@ -203,9 +224,10 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/node_modules/react-native" />
-        <option name="gradleJvm" value="17" />
+        <option name="gradleJvm" value="17 (2)" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/node_modules/react-native" />
@@ -213,6 +235,7 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/node_modules/react-native-camera/android" />
         <option name="gradleJvm" value="17" />
@@ -223,9 +246,10 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/node_modules/react-native-gesture-handler/android" />
-        <option name="gradleJvm" value="17" />
+        <option name="gradleJvm" value="17 (2)" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/node_modules/react-native-gesture-handler/android" />
@@ -233,9 +257,10 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/node_modules/react-native-gradle-plugin" />
-        <option name="gradleJvm" value="17" />
+        <option name="gradleJvm" value="17 (2)" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/node_modules/react-native-gradle-plugin" />
@@ -243,9 +268,10 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/node_modules/react-native-permissions/android" />
-        <option name="gradleJvm" value="17" />
+        <option name="gradleJvm" value="17 (2)" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/node_modules/react-native-permissions/android" />
@@ -253,9 +279,10 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/node_modules/react-native-safe-area-context/android" />
-        <option name="gradleJvm" value="17" />
+        <option name="gradleJvm" value="17 (2)" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/node_modules/react-native-safe-area-context/android" />
@@ -263,9 +290,10 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/node_modules/react-native-screens/android" />
-        <option name="gradleJvm" value="17" />
+        <option name="gradleJvm" value="17 (2)" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/node_modules/react-native-screens/android" />
@@ -273,9 +301,10 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/node_modules/react-native-vector-icons" />
-        <option name="gradleJvm" value="17" />
+        <option name="gradleJvm" value="17 (2)" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/node_modules/react-native-vector-icons" />

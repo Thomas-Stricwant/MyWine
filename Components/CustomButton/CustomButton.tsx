@@ -2,7 +2,7 @@ import * as React from 'react';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 
 type buttonProp = {
-    onPress: () => void,
+    onPress: any,
     text: string,
 }
 export default function CustomButton({onPress, text}: buttonProp) {
@@ -23,6 +23,14 @@ const styles = StyleSheet.create({
         paddingVertical: 8,
         paddingHorizontal: 15,
         borderRadius: 8,
+        elevation: 2,
+        shadowColor: '#000',
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 4,
     },
     textButton: {
         color: 'white',
